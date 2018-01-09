@@ -19,36 +19,100 @@ function initStartingBoard(){
   board = Create2DArray(8);
   
   //black pieces
-  board[0].push(new Rook(0),new Knight(0),new Bishop(0),new Queen(0),new King(0),new Bishop(0),new Knight(0),new Rook(0));
-  board[1].push(new Pawn(0),new Pawn(0),new Pawn(0),new Pawn(0),new Pawn(0),new Pawn(0),new Pawn(0),new Pawn(0));
-  //white pieces
-  board[6].push(new Pawn(1),new Pawn(1),new Pawn(1),new Pawn(1),new Pawn(1),new Pawn(1),new Pawn(1),new Pawn(1));
-  board[7].push(new Rook(1),new Knight(1),new Bishop(1),new King(1),new Queen(1),new Bishop(1),new Knight(1),new Rook(1));
+  board[0].push(new Rook(0,0,0),new Knight(0,0,1),new Bishop(0,0,2),new Queen(0,0,3),new King(0,0,4),new Bishop(0,0,5),new Knight(0,0,6),new Rook(0,0,7));
+  board[1].push(new Pawn(0,1,0),new Pawn(0,1,1),new Pawn(0,1,2),new Pawn(0,1,3),new Pawn(0,1,4),new Pawn(0,1,5),new Pawn(0,1,6),new Pawn(0,1,7));
   
-  //console.log(board);
+  /*create nulls for non occupied spaces (seems to be unnecessary in javascript)
+  for (var i=2;i<6;i++){
+    for(var j=0;j<8;j++){
+      board[i].push(0);
+    }
+  }
+  */
+  
+  //white pieces
+  board[6].push(new Pawn(1,6,0),new Pawn(1,6,1),new Pawn(1,6,2),new Pawn(1,6,3),new Pawn(1,6,4),new Pawn(1,6,5),new Pawn(1,6,6),new Pawn(1,6,7));
+  board[7].push(new Rook(1,7,0),new Knight(1,7,1),new Bishop(1,7,2),new Queen(1,7,3),new King(1,7,4),new Bishop(1,7,5),new Knight(1,7,6),new Rook(1,7,7));
+  
+  console.log(board);
   return board;
 }
 
+function initBlackPawns(){
+  for x in board[6]
+  return array
+}
+function initWhitePawns(){
+  return array
+}
 
 //pieces
-function Rook(team) {
+function Rook(team,x,y) {
   this.team = team;
+  this.x = x
+  this.y = y
 }
-function Knight(team) {
+function Knight(team,x,y) {
   this.team = team;
+  this.x = x
+  this.y = y
 }
-function Bishop(team) {
+function Bishop(team,x,y) {
   this.team = team;
+  this.x = x
+  this.y = y
 }
-function King(team) {
+function King(team,x,y) {
   this.team = team;
+  this.x = x
+  this.y = y
 }
-function Queen(team) {
+function Queen(team,x,y) {
   this.team = team;
+  this.x = x
+  this.y = y
 }
-function Pawn(team) {
+function Pawn(team,x,y) {
   this.team = team;
+  this.firstmove = false;
+
+  this.x = x
+  this.y = y
 }
+
+var getPossibleMoves = function(board, piece){
+  if (piece instanceof Rook){
+
+
+  } else if (piece instanceof Knight){
+
+
+  } else if (piece instanceof Bishop){
+
+
+  } else if (piece instanceof King){
+
+
+  } else if (piece instanceof Queen){
+
+
+  } else if (piece instanceof Pawn){
+
+
+  }
+
+
+
+
+
+
+}
+
+
+var movePiece = function(piece){
+  //piece.team
+
+};
 
 // .__                                          .__                                                            __      __  .__                    .__    .__  __      __                        __  .__                  
 // |  |__   ___________   ____   ______ __  _  _|  |__   ___________   ____   __  _  __ ____      ____   _____/  |_  _/  |_|  |__   ____     _____|  |__ |__|/  |_  _/  |_  ____   ____   _____/  |_|  |__   ___________ 
